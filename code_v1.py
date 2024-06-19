@@ -2,8 +2,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-# import matplotlib as plt
-import plotly.figure_factory as ff
 import matplotlib.pyplot as plt
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error
