@@ -1,2 +1,2 @@
-# trainmlmodel
-Streamlit Application for training for tweaking and training a ML model
+# train_ML_Model
+Streamlit Application for training & tweaking a ML model.
