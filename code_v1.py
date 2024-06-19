@@ -219,12 +219,17 @@ with model_training:
 		else:
 			# dis_col.markdown(f'<p style="font-size:32px;">Select some features for prediction</p>', unsafe_allow_html=True)
 			dis_col.warning('First select some features for prediction',icon="🚨")
+
+	 
 		
 	df_scores = pd.DataFrame(st.session_state.oob_scores, columns = ['score'])
-	fig1, ax1 = plt.subplots(figsize = (5,1.5))
-	sns.lineplot(x=np.arange(1,df_scores.shape[0]+1), y='score', data=df_scores, ax=ax1)
-	ax1.set_title('Model Scores graph')
-	dis_col.pyplot(fig1)
+
+	
+	if df_scores.shape[0] >= 1:
+		fig1, ax1 = plt.subplots(figsize = (5,1.5))
+		sns.lineplot(x=np.arange(1,df_scores.shape[0]+1), y='score', data=df_scores, ax=ax1)
+		ax1.set_title('Model Scores graph')
+		dis_col.pyplot(fig1)
 
 	if oob_score > 0.90:
 		st.success('Awesome!', icon="✅")
